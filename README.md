@@ -34,13 +34,14 @@ This repository is designed for execution on high-performance computing (HPC) en
 
 The scripts are organized based on the specific requirements of the training phase and the target hardware:
 
-* **Parallel Alignment & Base CPT:** * Provided scripts are optimized for the **LEONARDO Booster partition** (EuroHPC).
-* Uses **Singularity** containers to manage the environment across a large-scale multi-node setup (up to 128 nodes).
+* **Parallel Alignment & Base CPT:**
+  * Provided scripts are optimized for the **LEONARDO Booster partition** (EuroHPC).
+  * Uses **Singularity** containers to manage the environment across a large-scale multi-node setup (up to 256 nodes).
 
 
 * **Long CPT & SFT Stages:**
-* Scripts are optimized for **Pyxis/Enroot**-based clusters, specifically targeting a **single DGX B200 node**.
-* While configured for a single node, these scripts are designed to be easily extendable for multi-node scaling by adjusting the `#SBATCH --nodes` and distributed init parameters.
+  * Scripts are optimized for **Pyxis/Enroot**-based clusters, specifically targeting a **single DGX B200 node**.
+  * While configured for a single node, these scripts are designed to be easily extendable for multi-node scaling by adjusting the `#SBATCH --nodes` and distributed init parameters.
 
 
 
