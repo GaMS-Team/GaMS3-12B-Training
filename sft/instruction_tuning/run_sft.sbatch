@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --gpus-per-node=8
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=64
 #SBATCH --mem=0
 #SBATCH --exclusive
 #SBATCH --output=/dev/null
@@ -148,6 +148,6 @@ echo \"# completed at \$(date)\"
 srun \
   --cpu-bind=verbose \
   --output="${EXPERIMENTS_DIR}/${EXPERIMENT_NAME}/${RUN_NAME}.txt" \
-  --container-mounts ${EXPERIMENTS_DIR}:/experiments,${DATA_DIR}:/data,${MODEL_INPUT_PATH}:/model_input_path,${MODEL_OUTPUT_PATH}:/model_output_path,${SCRIPT_DIR}/training:/script,${OUTPUT_DIR}:/output \
+  --container-mounts ${EXPERIMENTS_DIR}:/experiments,${DATA_DIR}:/data,${MODEL_INPUT_PATH}:/model_input_path,${MODEL_OUTPUT_PATH}:/model_output_path,${SCRIPT_DIR}:/script,${OUTPUT_DIR}:/output \
   --container-image ${CONTAINER_DIR}/${CONTAINER_FILENAME} \
   /experiments/${EXPERIMENT_NAME}/${RUN_NAME}.sh
