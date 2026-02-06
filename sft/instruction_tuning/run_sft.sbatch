@@ -91,9 +91,9 @@ IS_DISTRIBUTED=$([ 1 -lt $SLURM_JOB_NUM_NODES ] && echo " distributed over $SLUR
 # setup the command
 echo """#!/bin/bash
 
-pip install transformers==4.56.1
-pip install deepspeed==0.18.1
-pip install trl
+pip install transformers==4.57.3
+pip install deepspeed==0.18.2
+pip install trl==0.25.1
 
 # using '$(basename $SBATCH)' -> $RUN_NAME.sbatch, running $SLURM_NPROCS tasks$IS_DISTRIBUTED
 
