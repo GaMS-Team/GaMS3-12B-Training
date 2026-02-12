@@ -70,6 +70,12 @@ sbatch run_sft.sbatch
 
 ```
 
+### Data Format
+
+NeMo framework expects indexed memmap data for pretraining. The scripts for pretraining data preparation are available [here](https://github.com/GaMS-Team/GaMS3-12B-CPT-Data-Preparation).
+
+For the SFT phases, the script expect JSONL datasets in the Prompt/completion format (see [GaMS-Nemotron-Chat](https://huggingface.co/datasets/cjvt/GaMS-Nemotron-Chat) dataset).
+
 ---
 
 ## 🏗️ Training Pipeline
